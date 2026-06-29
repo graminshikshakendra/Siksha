@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gramin Shiksha Kendra — Education & Career Guidance</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo-wrap">
+      <div class="logo-circle">GSK</div>
+      <div class="logo-text">
+        <h1>Gramin Shiksha Kendra</h1>
+        <p>Education for Empowerment</p>
+      </div>
+    </div>
+    <button class="hamburger" aria-label="Open menu" onclick="openMobileNav()">
+      <span class="h-line"></span>
+      <span class="h-line"></span>
+      <span class="h-line"></span>
+    </button>
+    <div class="nav-links">
+      <a class="active" onclick="show('home',this)">Home</a>
+      <a onclick="show('syllabus',this)">Syllabus</a>
+      <a onclick="show('teachers',this)">Teachers</a>
+      <a onclick="show('contact',this)">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Mobile nav overlay -->
+  <div id="mobileNav" class="mobile-nav" aria-hidden="true">
+    <button class="mobile-close" aria-label="Close menu" onclick="closeMobileNav()">✕</button>
+    <a onclick="show('home', document.querySelectorAll('.nav-links a')[0]); closeMobileNav()">Home</a>
+    <a onclick="show('syllabus', document.querySelectorAll('.nav-links a')[1]); closeMobileNav()">Syllabus</a>
+    <a onclick="show('teachers', document.querySelectorAll('.nav-links a')[2]); closeMobileNav()">Teachers</a>
+    <a onclick="show('contact', document.querySelectorAll('.nav-links a')[3]); closeMobileNav()">Contact</a>
+  </div>
+
+  <!-- HOME -->
+  <div class="section active" id="home">
+    <div class="hero">
+      <div class="hero-badge">🎓 Education & Career Guidance Initiative</div>
+      <h2>Quality Education for<br><span>Science & Commerce</span> Students</h2>
+      <div class="hero-sub">CBSE + JAC | Class 11 &amp; 12 | Live &amp; Recorded Online Classes</div>
+      <div class="mission-box">
+        Our mission is to provide accessible, affordable, and quality education to all students — so that children from
+        remote and low-income backgrounds can build a better future with knowledge, skill, and confidence.
+      </div>
+      <div class="hero-btns">
+        <button class="btn-w" onclick="show('syllabus', document.querySelectorAll('.nav-links a')[1])">View
+          Syllabus</button>
+        <button class="btn-o" onclick="show('teachers', document.querySelectorAll('.nav-links a')[2])">Meet
+          Teachers</button>
+        <button class="btn-w" onclick="show('contact', document.querySelectorAll('.nav-links a')[3])">Enroll
+          Now</button>
+      </div>
+    </div>
+
+    <div class="stats-bar">
+      <div class="stat clickable" data-goto="contact" tabindex="0">
+        <div class="stat-num">CBSE+JAC</div>
+        <div class="stat-label">Board Coverage</div>
+      </div>
+      <div class="stat clickable" data-goto="syllabus" tabindex="0">
+        <div class="stat-num">7</div>
+        <div class="stat-label">Subjects</div>
+      </div>
+      <div class="stat clickable" data-goto="contact" tabindex="0">
+        <div class="stat-num">₹100</div>
+        <div class="stat-label">Per Subject / Month</div>
+      </div>
+      <div class="stat clickable" data-goto="contact" tabindex="0">
+        <div class="stat-num">Live</div>
+        <div class="stat-label">Google Meet / Zoom</div>
+      </div>
+    </div>
+
+    <div class="features">
+      <div class="sec-title">
+        <h2>Our Features &amp; Highlights</h2>
+        <p>Everything you need for exam success</p>
+        <div class="bar"></div>
+      </div>
+      <div class="feat-grid">
+        <div class="feat-card clickable" data-goto="syllabus" tabindex="0">
+          <div class="feat-icon">🎥</div>
+          <h4>Live &amp; Recorded Classes</h4>
+          <p>Attend live or watch recordings anytime</p>
+        </div>
+        <div class="feat-card clickable" data-goto="syllabus" tabindex="0">
+          <div class="feat-icon">♾️</div>
+          <h4>Lifetime Validity</h4>
+          <p>Access class recordings forever</p>
+        </div>
+        <div class="feat-card clickable" data-goto="syllabus" tabindex="0">
+          <div class="feat-icon">🏭</div>
+          <h4>Industry Insight</h4>
+          <p>Career guidance with every subject</p>
+        </div>
+        <div class="feat-card clickable" data-goto="syllabus" tabindex="0">
+          <div class="feat-icon">📅</div>
+          <h4>3 Days Class Per Week</h4>
+          <p>Structured schedule for consistency</p>
+        </div>
+        <div class="feat-card clickable" data-goto="syllabus" tabindex="0">
+          <div class="feat-icon">📝</div>
+          <h4>Previous Year Papers</h4>
+          <p>Solved papers &amp; expected model papers</p>
+        </div>
+        <div class="feat-card clickable" data-goto="contact" tabindex="0">
+          <div class="feat-icon">👨‍👩‍👧</div>
+          <h4>Study with Guidance</h4>
+          <p>Personal support from expert faculty</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="streams-sec">
+      <div class="sec-title">
+        <h2>Choose Your Stream</h2>
+        <p>Comprehensive courses for both Science and Commerce</p>
+        <div class="bar"></div>
+      </div>
+      <div class="stream-grid">
+        <div class="stream-card sci">
+          <!-- make stream card clickable -->
+          <div class="stream-card-inner" data-goto="syllabus" tabindex="0">
+            <div class="stream-icon">🔬</div>
+            <h3>Science Stream</h3>
+            <p>Expert faculty covering Physics, Chemistry, Biology, Maths &amp; Computer Science — concept-based and
+              exam-focused teaching for CBSE &amp; JAC boards.</p>
+            <div class="pills">
+              <span class="pill">Mathematics</span>
+              <span class="pill">Physics</span>
+              <span class="pill">Chemistry</span>
+              <span class="pill">Biology</span>
+              <span class="pill">Computer Science</span>
+            </div>
+          </div>
+        </div>
+        <div class="stream-card com">
+          <div class="stream-card-inner" data-goto="syllabus" tabindex="0">
+            <div class="stream-icon">📊</div>
+            <h3>Commerce Stream</h3>
+            <p>Practical and exam-focused teaching for Economics, BST &amp; Accounts — with qualified CAs and MBA
+              faculty for CBSE &amp; JAC boards.</p>
+            <div class="pills">
+              <span class="pill teal">Economics</span>
+              <span class="pill teal">Business Studies</span>
+              <span class="pill teal">Accountancy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-sec">
+      <div class="sec-title">
+        <h2>Why Choose Gramin Shiksha Kendra?</h2>
+        <p>We are committed to your success</p>
+        <div class="bar"></div>
+      </div>
+      <div class="why-grid">
+        <div class="why-card clickable" data-goto="teachers" tabindex="0">
+          <div class="why-icon">🏆</div>
+          <h4>Experienced &amp; Qualified Faculty</h4>
+        </div>
+        <div class="why-card clickable" data-goto="contact" tabindex="0">
+          <div class="why-icon">💰</div>
+          <h4>Quality Education at Affordable Fees</h4>
+        </div>
+        <div class="why-card clickable" data-goto="syllabus" tabindex="0">
+          <div class="why-icon">🎯</div>
+          <h4>Focus on Concepts &amp; Practical Knowledge</h4>
+        </div>
+        <div class="why-card clickable" data-goto="syllabus" tabindex="0">
+          <div class="why-icon">📊</div>
+          <h4>Regular Test Series &amp; Performance Analysis</h4>
+        </div>
+        <div class="why-card clickable" data-goto="contact" tabindex="0">
+          <div class="why-icon">🎧</div>
+          <h4>Doubt Clearance &amp; Personal Support</h4>
+        </div>
+        <div class="why-card clickable" data-goto="syllabus" tabindex="0">
+          <div class="why-icon">📚</div>
+          <h4>As Per Latest Syllabus</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-bar">
+      <div class="info-item">
+        <div class="i-icon">🎥</div>
+        <h5>Classes On</h5>
+        <p>Google Meet / Zoom</p>
+      </div>
+      <div class="info-item">
+        <div class="i-icon">₹</div>
+        <h5>Tuition Fees</h5>
+        <p>₹100 / subject / month</p>
+      </div>
+      <div class="info-item">
+        <div class="i-icon">💬</div>
+        <h5>WhatsApp Us</h5>
+        <p>9241526159</p>
+      </div>
+      <div class="info-item">
+        <div class="i-icon">🤝</div>
+        <h5>Our Promise</h5>
+        <p>Education + Guidance + Support</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>Join Us for a Better Tomorrow</span> — Shiksha se Sashaktikaran, Ek Behtar Bhavishya Ki Aur
+    </div>
+  </div>
+
+  <!-- SYLLABUS -->
+  <div class="section" id="syllabus">
+    <div class="syl-wrap">
+      <div class="sec-title">
+        <h2>Syllabus Details</h2>
+        <p>CBSE + JAC | Class 11 &amp; 12</p>
+        <div class="bar"></div>
+      </div>
+      <div class="stream-tabs">
+        <button class="tab-btn active" onclick="switchSyl('sci',this)">Science Stream</button>
+        <button class="tab-btn" onclick="switchSyl('com',this)">Commerce Stream</button>
+      </div>
+
+      <div id="syl-sci">
+        <div class="fac-section">
+          <div class="fac-header">
+            <h3>Faculty — Science Stream</h3><span>CBSE + JAC | 11th &amp; 12th</span>
+          </div>
+          <table>
+            <tr>
+              <th>Subject</th>
+              <th>Faculty Name</th>
+              <th>Qualification</th>
+            </tr>
+            <tr>
+              <td><span class="sub-pill">📐 Mathematics</span></td>
+              <td>Bipasha Mahato</td>
+              <td>M.Sc Math, MBA Finance and HR</td>
+            </tr>
+            <tr>
+              <td><span class="sub-pill">⚛️ Physics</span></td>
+              <td>Ranjan Mahato</td>
+              <td>B.Tech (E&amp;C)</td>
+            </tr>
+            <tr>
+              <td><span class="sub-pill">🧪 Chemistry</span></td>
+              <td>Nand Kishor Mahato</td>
+              <td>M.Tech (Mechanical)</td>
+            </tr>
+            <tr>
+              <td><span class="sub-pill">🌿 Biology</span></td>
+              <td>Shivani Mahato</td>
+              <td>M.Pharma</td>
+            </tr>
+            <tr>
+              <td><span class="sub-pill">🌿 Biology</span></td>
+              <td>Renu Mahato</td>
+              <td>BSC (Biology)</td>
+            </tr>
+            <tr>
+              <td><span class="sub-pill">💻 Computer Science</span></td>
+              <td>Bablu Mahato</td>
+              <td>B.Tech (CSE)</td>
+            </tr>
+            <tr>
+              <td><span class="sub-pill">💻 Computer Science</span></td>
+              <td>Sanjay Mahato</td>
+              <td>M.Tech (CSE)</td>
+            </tr>
+          </table>
+        </div>
+        <div class="topic-grid">
+          <div class="topic-card clickable" data-goto="syl-sci" tabindex="0">
+            <h5>📐 Mathematics</h5>
+            <ul class="topic-list">
+              <li>Sets, Relations &amp; Functions</li>
+              <li>Trigonometry</li>
+              <li>Calculus — Differential &amp; Integral</li>
+              <li>Vectors &amp; 3D Geometry</li>
+              <li>Probability &amp; Statistics</li>
+              <li>Matrices &amp; Determinants</li>
+            </ul>
+          </div>
+          <div class="topic-card clickable" data-goto="syl-sci" tabindex="0">
+            <h5>⚛️ Physics</h5>
+            <ul class="topic-list">
+              <li>Laws of Motion</li>
+              <li>Work, Energy &amp; Power</li>
+              <li>Electricity &amp; Magnetism</li>
+              <li>Optics &amp; Wave Optics</li>
+              <li>Modern Physics</li>
+              <li>Thermodynamics</li>
+            </ul>
+          </div>
+          <div class="topic-card clickable" data-goto="syl-sci" tabindex="0">
+            <h5>🧪 Chemistry</h5>
+            <ul class="topic-list">
+              <li>Atomic Structure &amp; Bonding</li>
+              <li>States of Matter</li>
+              <li>Organic Chemistry</li>
+              <li>Electrochemistry</li>
+              <li>Polymers &amp; Biomolecules</li>
+              <li>Chemical Kinetics</li>
+            </ul>
+          </div>
+          <div class="topic-card clickable" data-goto="syl-sci" tabindex="0">
+            <h5>🌿 Biology</h5>
+            <ul class="topic-list">
+              <li>Cell: Structure &amp; Function</li>
+              <li>Plant Physiology</li>
+              <li>Human Physiology</li>
+              <li>Genetics &amp; Evolution</li>
+              <li>Biotechnology</li>
+              <li>Ecology &amp; Environment</li>
+            </ul>
+          </div>
+          <div class="topic-card clickable" data-goto="syl-sci" tabindex="0">
+            <h5>💻 Computer Science</h5>
+            <ul class="topic-list">
+              <li>Python Programming</li>
+              <li>Data Structures</li>
+              <li>Database Management</li>
+              <li>Networking Concepts</li>
+              <li>Computer Organisation</li>
+              <li>Boolean Algebra</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="syl-com" style="display:none;">
+        <div class="fac-section">
+          <div class="fac-header">
+            <h3>Faculty — Commerce Stream</h3><span>CBSE + JAC | 11th &amp; 12th</span>
+          </div>
+          <table>
+            <tr>
+              <th>Subject</th>
+              <th>Faculty Name</th>
+              <th>Qualification</th>
+            </tr>
+            <tr>
+              <td><span class="sub-pill">📈 Economics</span></td>
+              <td>Neha Mahto</td>
+              <td>Master in Economics</td>
+            </tr>
+            <tr>
+              <td><span class="sub-pill">💼 Business Studies</span></td>
+              <td>Shekhar Mahto</td>
+              <td>MBA in Finance</td>
+            </tr>
+            <tr>
+              <td><span class="sub-pill">📒 Accountancy</span></td>
+              <td>Nitay Mahato</td>
+              <td>B.Com (Accounts-Hons)</td>
+            </tr>
+            <tr>
+              <td><span class="sub-pill">📒 Accountancy</span></td>
+              <td>Virendra Mahto</td>
+              <td>Cost Accountant (ICWAI/CMA), CA Inter, CS Inter</td>
+            </tr>
+          </table>
+        </div>
+        <div class="topic-grid">
+          <div class="topic-card">
+            <h5>📈 Economics</h5>
+            <ul class="topic-list">
+              <li>Micro: Demand &amp; Supply</li>
+              <li>Consumer Behaviour</li>
+              <li>Macro: National Income</li>
+              <li>Money &amp; Banking</li>
+              <li>Government Budget</li>
+              <li>Statistics for Economics</li>
+            </ul>
+          </div>
+          <div class="topic-card">
+            <h5>💼 Business Studies</h5>
+            <ul class="topic-list">
+              <li>Nature of Business</li>
+              <li>Business Organisation</li>
+              <li>Management Principles</li>
+              <li>Marketing Management</li>
+              <li>Consumer Protection</li>
+              <li>Entrepreneurship</li>
+            </ul>
+          </div>
+          <div class="topic-card">
+            <h5>📒 Accountancy</h5>
+            <ul class="topic-list">
+              <li>Basic Accounting Concepts</li>
+              <li>Journal, Ledger &amp; Trial Balance</li>
+              <li>Partnership Accounts</li>
+              <li>Company Accounts</li>
+              <li>Cash Flow Statement</li>
+              <li>Financial Statement Analysis</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TEACHERS -->
+  <div class="section" id="teachers">
+    <div class="teach-wrap">
+      <div class="sec-title">
+        <h2>Meet Our Faculty</h2>
+        <p>Experienced and qualified teachers dedicated to your success</p>
+        <div class="bar"></div>
+      </div>
+      <div class="teach-tabs">
+        <button class="tab-btn active" onclick="switchTeach('sci-t',this)">Science Faculty</button>
+        <button class="tab-btn" onclick="switchTeach('com-t',this)">Commerce Faculty</button>
+      </div>
+
+      <div id="sci-t" class="teach-grid">
+        <div class="teach-card clickable" data-goto="teachers" tabindex="0">
+          <div class="teach-top">
+            <div class="avatar" style="background:#1d4ed8;"><img class="avatar-img" src="./Gramin-Shikhsha-kendra/Teachers/Bipasha Mahato ,M.sc.png" alt=""></div>
+            <div class="teach-name">Bipasha Mahato</div>
+            <div class="teach-sub">Mathematics</div>
+            <div class="teach-qual">M.Sc Math, MBA Finance &amp; HR</div>
+          </div>
+          <div class="teach-bottom">Science Stream</div>
+        </div>
+        <div class="teach-card clickable" data-goto="teachers" tabindex="0">
+          <div class="teach-top">
+            <div class="avatar" style="background:#0369a1;"> <img class="avatar-img" src="./Gramin-Shikhsha-kendra/Teachers/Ranjan Kumar mahto_I.Sc._Physics.png" alt=""> </div>
+            <div class="teach-name">Ranjan Mahato</div>
+            <div class="teach-sub">Physics</div>
+            <div class="teach-qual">B.Tech (E&amp;C)</div>
+          </div>
+          <div class="teach-bottom">Science Stream</div>
+        </div>
+        <div class="teach-card clickable" data-goto="teachers" tabindex="0">
+          <div class="teach-top">
+            <div class="avatar" style="background:#0e7490;"><img class="avatar-img" src="./Gramin-Shikhsha-kendra/Teachers/Nand Kishor Mahato  I.png" alt=""></div>
+            <div class="teach-name">Nand Kishor Mahato</div>
+            <div class="teach-sub">Chemistry</div>
+            <div class="teach-qual">M.Tech (Mechanical)</div>
+          </div>
+          <div class="teach-bottom">Science Stream</div>
+        </div>
+        <div class="teach-card clickable" data-goto="teachers" tabindex="0">
+          <div class="teach-top">
+            <div class="avatar" style="background:#1e40af;"><img class="avatar-img" src="./Gramin-Shikhsha-kendra/Teachers/Shivani Mahto_I.sc._Biology..png" alt=""></div>
+            <div class="teach-name">Shivani Mahato</div>
+            <div class="teach-sub">Biology</div>
+            <div class="teach-qual">M.Pharma</div>
+          </div>
+          <div class="teach-bottom">Science Stream</div>
+        </div>
+        <div class="teach-card clickable" data-goto="teachers" tabindex="0">
+          <div class="teach-top">
+            <div class="avatar" style="background:#2563c4;"><img class="avatar-img" src="./Gramin-Shikhsha-kendra/Teachers/10.png" alt=""></div>
+            <div class="teach-name">Renu Mahato</div>
+            <div class="teach-sub">Biology</div>
+            <div class="teach-qual">BSC (Biology)</div>
+          </div>
+          <div class="teach-bottom">Science Stream</div>
+        </div>
+        <div class="teach-card clickable" data-goto="teachers" tabindex="0">
+          <div class="teach-top">
+            <div class="avatar" style="background:#075985;">BM</div>
+            <div class="teach-name">Bablu Mahato</div>
+            <div class="teach-sub">Computer Science</div>
+            <div class="teach-qual">B.Tech (CSE)</div>
+          </div>
+          <div class="teach-bottom">Science Stream</div>
+        </div>
+        <div class="teach-card clickable" data-goto="teachers" tabindex="0">
+          <div class="teach-top">
+            <div class="avatar" style="background:#0c4a6e;"><img class="avatar-img" src="./Gramin-Shikhsha-kendra/Teachers/SanjayKumarMahto_Computer Science .png" alt=""></div>
+            <div class="teach-name">Sanjay Mahato</div>
+            <div class="teach-sub">Computer Science</div>
+            <div class="teach-qual">M.Tech (CSE)</div>
+          </div>
+          <div class="teach-bottom">Science Stream</div>
+        </div>
+      </div>
+
+      <div id="com-t" class="teach-grid" style="display:none;">
+        <div class="teach-card">
+          <div class="teach-top">
+            <div class="avatar" style="background:#1d4ed8;"><img class="avatar-img" src="./Gramin-Shikhsha-kendra/Teachers/NehaMahto_I.com_Economics.png" alt=""></div>
+            <div class="teach-name">Neha Mahto</div>
+            <div class="teach-sub">Economics</div>
+            <div class="teach-qual">Master in Economics</div>
+          </div>
+          <div class="teach-bottom">Commerce Stream</div>
+        </div>
+        <div class="teach-card">
+          <div class="teach-top">
+            <div class="avatar" style="background:#0369a1;"><img class="avatar-img" src="./Gramin-Shikhsha-kendra/Teachers/ShekharkumarMahto_I.com_BST.png" alt=""></div>
+            <div class="teach-name">Shekhar Mahto</div>
+            <div class="teach-sub">Business Studies</div>
+            <div class="teach-qual">MBA in Finance</div>
+          </div>
+          <div class="teach-bottom">Commerce Stream</div>
+        </div>
+        <div class="teach-card">
+          <div class="teach-top">
+            <div class="avatar" style="background:#0e7490;"><img class="avatar-img" src="./Gramin-Shikhsha-kendra/Teachers/1.png" alt=""></div>
+            <div class="teach-name">Nitay Mahato</div>
+            <div class="teach-sub">Accountancy</div>
+            <div class="teach-qual">B.Com (Accounts-Hons)</div>
+          </div>
+          <div class="teach-bottom">Commerce Stream</div>
+        </div>
+        <div class="teach-card">
+          <div class="teach-top">
+            <div class="avatar" style="background:#1e3a8a;"><img class="avatar-img" src="./Gramin-Shikhsha-kendra/Teachers/6.png" alt=""></div>
+            <div class="teach-name">Virendra Mahto</div>
+            <div class="teach-sub">Accountancy</div>
+            <div class="teach-qual">CA Inter, CMA, CS Inter</div>
+          </div>
+          <div class="teach-bottom">Commerce Stream</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="section" id="contact">
+    <div class="contact-wrap">
+      <div class="sec-title">
+        <h2>Contact &amp; Enroll</h2>
+        <p>Join Gramin Shiksha Kendra — Admissions Open</p>
+        <div class="bar"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="c-card">
+          <h3>Get in Touch</h3>
+          <div class="c-row">
+            <div class="c-icon">💬</div>
+            <div class="c-detail"><label>WhatsApp</label>
+              <p>9241526159</p>
+            </div>
+          </div>
+          <div class="c-row">
+            <div class="c-icon">🎥</div>
+            <div class="c-detail"><label>Classes On</label>
+              <p>Google Meet / Zoom</p>
+            </div>
+          </div>
+          <div class="c-row">
+            <div class="c-icon">📅</div>
+            <div class="c-detail"><label>Schedule</label>
+              <p>3 Days a Week</p>
+            </div>
+          </div>
+          <div class="c-row">
+            <div class="c-icon">📋</div>
+            <div class="c-detail"><label>Board</label>
+              <p>CBSE + JAC</p>
+            </div>
+          </div>
+          <div class="c-row">
+            <div class="c-icon">🎓</div>
+            <div class="c-detail"><label>Classes</label>
+              <p>11th &amp; 12th</p>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <div class="fee-box">
+            <div class="fee-label">Tuition Fees</div>
+            <div class="fee-big">₹100</div>
+            <div style="color:#fff;font-size:15px;font-weight:600;">Per Subject Per Month</div>
+            <div class="fee-note">Affordable quality education for every student</div>
+          </div>
+          <div class="c-card" style="flex:1;">
+            <h3>Our Promise</h3>
+            <div class="c-row">
+              <div class="c-icon">✅</div>
+              <div class="c-detail"><label></label>
+                <p>Education + Guidance</p>
+              </div>
+            </div>
+            <div class="c-row">
+              <div class="c-icon">✅</div>
+              <div class="c-detail"><label></label>
+                <p>Support + Strong Future</p>
+              </div>
+            </div>
+            <div class="c-row">
+              <div class="c-icon">✅</div>
+              <div class="c-detail"><label></label>
+                <p>Lifetime Access to Recordings</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-bottom" style="margin-top:1.8rem;">
+        <a href="https://wa.me/919241526159" class="wa-btn">💬 Chat on WhatsApp — 9241526159</a>
+      </div>
+    </div>
+    <div class="footer" style="margin-top:2rem;">
+      <span>Join Us for a Better Tomorrow</span> — Shiksha se Sashaktikaran, Ek Behtar Bhavishya Ki Aur
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
